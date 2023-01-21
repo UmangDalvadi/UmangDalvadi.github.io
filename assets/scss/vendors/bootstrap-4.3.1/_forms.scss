@@ -36,7 +36,6 @@
   // Placeholder
   &::placeholder {
     color: $input-placeholder-color;
-    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
     opacity: 1;
   }
 
@@ -48,18 +47,13 @@
   &:disabled,
   &[readonly] {
     background-color: $input-disabled-bg;
-    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
     opacity: 1;
   }
 }
 
 select.form-control {
   &:focus::-ms-value {
-    // Suppress the nested default white text on blue background highlight given to
-    // the selected option text when the (still closed) <select> receives focus
-    // in IE and (under certain conditions) Edge, as it looks bad and cannot be made to
-    // match the appearance of the native widget.
-    // See https://github.com/twbs/bootstrap/issues/19398.
+
     color: $input-color;
     background-color: $input-bg;
   }
@@ -104,8 +98,6 @@ select.form-control {
 
 // Readonly controls as plain text
 //
-// Apply class to a readonly input to make it appear like regular plain
-// text (without any border, background color, focus indicator)
 
 .form-control-plaintext {
   display: block;
@@ -152,6 +144,7 @@ select.form-control {
 
 // stylelint-disable-next-line no-duplicate-selectors
 select.form-control {
+
   &[size],
   &[multiple] {
     height: auto;
@@ -187,8 +180,8 @@ textarea.form-control {
   margin-right: -$form-grid-gutter-width / 2;
   margin-left: -$form-grid-gutter-width / 2;
 
-  > .col,
-  > [class*="col-"] {
+  >.col,
+  >[class*="col-"] {
     padding-right: $form-grid-gutter-width / 2;
     padding-left: $form-grid-gutter-width / 2;
   }
@@ -210,7 +203,7 @@ textarea.form-control {
   margin-top: $form-check-input-margin-y;
   margin-left: -$form-check-input-gutter;
 
-  &:disabled ~ .form-check-label {
+  &:disabled~.form-check-label {
     color: $text-muted;
   }
 }
@@ -242,7 +235,8 @@ textarea.form-control {
 // pseudo-classes but also includes `.is-invalid` and `.is-valid` classes for
 // server side validation.
 
-@each $state, $data in $form-validation-states {
+@each $state,
+$data in $form-validation-states {
   @include form-validation-state($state, map-get($data, color), map-get($data, icon));
 }
 
@@ -311,6 +305,7 @@ textarea.form-control {
       width: auto;
       padding-left: 0;
     }
+
     .form-check-input {
       position: relative;
       flex-shrink: 0;
@@ -323,6 +318,7 @@ textarea.form-control {
       align-items: center;
       justify-content: center;
     }
+
     .custom-control-label {
       margin-bottom: 0;
     }

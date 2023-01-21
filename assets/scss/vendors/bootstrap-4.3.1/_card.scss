@@ -13,18 +13,18 @@
   border: $card-border-width solid $card-border-color;
   @include border-radius($card-border-radius);
 
-  > hr {
+  >hr {
     margin-right: 0;
     margin-left: 0;
   }
 
-  > .list-group:first-child {
+  >.list-group:first-child {
     .list-group-item:first-child {
       @include border-top-radius($card-border-radius);
     }
   }
 
-  > .list-group:last-child {
+  >.list-group:last-child {
     .list-group-item:last-child {
       @include border-bottom-radius($card-border-radius);
     }
@@ -57,7 +57,7 @@
     text-decoration: none;
   }
 
-  + .card-link {
+  +.card-link {
     margin-left: $card-spacer-x;
   }
 }
@@ -77,7 +77,7 @@
     @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
   }
 
-  + .list-group {
+  +.list-group {
     .list-group-item:first-child {
       border-top: 0;
     }
@@ -155,7 +155,7 @@
 
     .card {
       display: flex;
-      // Flexbugs #4: https://github.com/philipwalton/flexbugs#flexbug-4
+
       flex: 1 0 0%;
       flex-direction: column;
       margin-right: $card-deck-margin;
@@ -176,20 +176,20 @@
 
   // The child selector allows nested `.card` within `.card-group`
   // to display properly.
-  > .card {
+  >.card {
     margin-bottom: $card-group-margin;
   }
 
   @include media-breakpoint-up(sm) {
     flex-flow: row wrap;
+
     // The child selector allows nested `.card` within `.card-group`
     // to display properly.
-    > .card {
-      // Flexbugs #4: https://github.com/philipwalton/flexbugs#flexbug-4
+    >.card {
       flex: 1 0 0%;
       margin-bottom: 0;
 
-      + .card {
+      +.card {
         margin-left: 0;
         border-left: 0;
       }
@@ -204,6 +204,7 @@
             // stylelint-disable-next-line property-blacklist
             border-top-right-radius: 0;
           }
+
           .card-img-bottom,
           .card-footer {
             // stylelint-disable-next-line property-blacklist
@@ -219,6 +220,7 @@
             // stylelint-disable-next-line property-blacklist
             border-top-left-radius: 0;
           }
+
           .card-img-bottom,
           .card-footer {
             // stylelint-disable-next-line property-blacklist
@@ -259,7 +261,7 @@
 //
 
 .accordion {
-  > .card {
+  >.card {
     overflow: hidden;
 
     &:not(:first-of-type) {
