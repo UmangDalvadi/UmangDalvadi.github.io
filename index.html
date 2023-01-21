@@ -461,7 +461,32 @@
                                     href="https://github.com/UmangDalvadi"><i class="ti-github"
                                         aria-hidden="true"></i></a></li>
                         </ul>
+                        <div class="contact-info-card"
+                            style=" min-height: 35px;flex-direction:column;display: flex; align-items: center;padding-bottom:0%;  ">
+
+                            <p
+                                style="flex-direction:column;font-size: 130%;color: rgba(223, 0, 0, 0.8); letter-spacing: 2px; margin:0;">
+                                This page was viewed
+                            </p>
+                            <h1 style="font-size: 70px; margin: 0;" id="count">0</h1>
+                            <p style="font-size: 130%;color: rgba(223, 0, 0, 0.8); letter-spacing: 2px; margin:0;">times
+                            </p>
+
+                            <script>
+                                const countEl = document.getElementById("count");
+                                countvisits();
+
+                                function countvisits() {
+                                    fetch('https://api.countapi.xyz/update/UmangDalvadi/Portfolio/?amount=1')
+                                        .then((res) => res.json())
+                                        .then((res) => {
+                                            countEl.innerHTML = res.value;
+                                        });
+                                }
+                            </script>
+                        </div>
                     </div>
+
                 </div>
             </div>
 
@@ -476,6 +501,7 @@
                         title="Bootstrap 4 Themes and Dashboards"> Umang Dalvadi</span></a>
             </p>
         </div>
+
     </footer>
 
     <!-- core  -->
