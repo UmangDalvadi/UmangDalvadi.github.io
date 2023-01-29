@@ -5,6 +5,6 @@
 To deploy this project run
 
 ```bash
-  https://umangdalvadi.github.io
+  https://umangdalvadi.github.io/
 ```
 
